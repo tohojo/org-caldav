@@ -879,7 +879,7 @@ Returns buffer containing the ICS file."
     ;; Export events to one single ICS file.
     (if (featurep 'ox-icalendar)
 	;; New exporter (Org 8)
-	(apply 'org-icalendar--combine-files nil orgfiles)
+	(apply 'org-icalendar--combine-files orgfiles)
       (apply 'org-export-icalendar t orgfiles))
     (find-file-noselect (symbol-value icalendar-file))))
 
